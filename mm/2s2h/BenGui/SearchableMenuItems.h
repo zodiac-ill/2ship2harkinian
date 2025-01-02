@@ -376,6 +376,12 @@ static const std::unordered_map<int32_t, const char*> cremiaRewardOptions = {
     { CREMIA_REWARD_ALWAYS_RUPEE, "Rupee" },
 };
 
+static const std::unordered_map<int32_t, const char*> gibdoTradeSequenceOptions = { 
+    { GIBDO_TRADE_SEQUENCE_VANILLA, "Vanilla" },
+    { GIBDO_TRADE_SEQUENCE_MM3D, "MM3D" },
+    { GIBDO_TRADE_SEQUENCE_NO_TRADE, "No trade" }, 
+};
+
 static const std::unordered_map<int32_t, const char*> clockTypeOptions = {
     { CLOCK_TYPE_ORIGINAL, "Original" },
     { CLOCK_TYPE_3DS, "MM3D style" },
@@ -1137,6 +1143,15 @@ void AddEnhancements() {
                   "-Rupee: Get the rupee reward",
                   WIDGET_CVAR_COMBOBOX,
                   { .comboBoxOptions = cremiaRewardOptions } },
+                { "Gibdo Trade Sequence Options",
+                  "gEnhancements.Minigames.GibdoTradeSequence",
+                  "Changes the way the Gibdo Trade Sequence works\n"
+                  "-Vanilla: Works normally\n"
+                  "-MM3D: Gibdos will only take one quantity of the item they request, as they do in MM3D. The Gibdo "
+                  "requesting a blue potion will also accept a red potion.\n"
+                  "-No trade: Gibdos will vanish without taking items",
+                  WIDGET_CVAR_COMBOBOX,
+                  { .comboBoxOptions = gibdoTradeSequenceOptions } },
                 { "Cucco Shack Cucco Count",
                   "gEnhancements.Minigames.CuccoShackCuccoCount",
                   "Choose how many cuccos you need to raise to make Grog happy.",
